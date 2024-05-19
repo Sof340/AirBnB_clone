@@ -47,8 +47,8 @@ class BaseModel:
         """
         returns a dictionary containing all keys/values of __dict__ and more.
         """
-        temp = self.__dict__
+        temp = self.__dict__.copy()
         temp['__class__'] = self.__class__.__name__
-        temp['updated_at'] = temp['updated_at'].isoformat()
-        temp['created_at'] = temp['created_at'].isoformat()
+        temp['updated_at'] = self.updated_at.isoformat()
+        temp['created_at'] = self.created_at.isoformat()
         return temp
