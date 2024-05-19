@@ -9,3 +9,12 @@ class TestBaseModel(unittest.TestCase):
         """
         
         self.assertNotEqual(base_1.id, base_2.id)
+
+    def test_updated_variable(self):
+        """
+        Let test whether the variable updated at is correctly updated.
+        """
+        base_1 = BaseModel()
+        value_now = base_1.updated_at
+        base_1.save()
+        self.assertNotEqual(value_now, base_1.updated_at)
