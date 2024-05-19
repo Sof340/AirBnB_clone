@@ -22,7 +22,7 @@ class BaseModel:
         to_dict(self): returns a dictionary containing all keys/values needed.
     """
 
-    def __init__(self):
+    def __init__(self, *args, **kwargs):
         """
         initializes the private attributes.
         """
